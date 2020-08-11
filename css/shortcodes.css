@@ -723,10 +723,11 @@
 		position:relative;
 		overflow:hidden;
 		cursor:pointer;
+		opacity: 1;
 	}
 	
 	.collage-thumb:hover .thumb-info {
-		opacity:1;
+		/* opacity:1; */
 		bottom:-5px;
 	}
 	
