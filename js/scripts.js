@@ -78,7 +78,7 @@ Function Page Load
 						} else {
 							TweenMax.to($(".preloader-wrap"),0.7, {force3D:true, yPercent: -101, delay:0.3, ease:Power2.easeInOut});
 						}
-						TweenMax.set($(".preloader-wrap"), {visibility:'hidden', delay:0, opacity:0});
+						TweenMax.set($(".preloader-wrap"), {visibility:'hidden', delay:0.9, opacity:0});
 						
 						setTimeout(function(){
 						
@@ -108,7 +108,7 @@ Function Page Load
 								TweenMax.to($("#hero-bg-image"), 1, {force3D:true, scale:1.05 , opacity:0.8, delay:0.4, ease:Power2.easeOut});
 								TweenMax.to($(".hero-title"), 0.4, {force3D:true, y: 0, opacity:1, delay:0.7, ease:Power2.easeOut});
 								TweenMax.to($(".hero-subtitle"), 0.4, {force3D:true, y: 50, opacity:1, delay:0.75, ease:Power2.easeOut});
-								TweenMax.to($(".scroll-down-wrap"), 0.4, {force3D:true, y: 0, opacity:1, delay:0.0, ease:Power2.easeOut});
+								TweenMax.to($(".scroll-down-wrap"), 0.4, {force3D:true, y: 0, opacity:1, delay:0.5, ease:Power2.easeOut});
 								// TweenMax.to($("#main-page-content"), 0.4, {force3D:true, opacity:1, y:0, delay:0.95, ease:Power2.easeOut});
 								TweenMax.to($("#main-page-content"), 0.4, {force3D:true, opacity:1, y:0, delay:0, ease:Power2.easeOut});
 							} else {
