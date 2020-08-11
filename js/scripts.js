@@ -38,7 +38,8 @@ Function Page Load
 		
 		var width = 100,
 			perfData = window.performance.timing, 
-			EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
+			// EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
+			EstimatedTime = 2000
 			time = ((EstimatedTime/1000)%10) * 50
 		
 		
