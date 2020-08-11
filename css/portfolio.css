@@ -125,7 +125,7 @@
 		color:#fff;
 	}
 	
-	#external-caption {
+	/* #external-caption {
 		position:fixed;
 		left:80px;
 		top:70vh;
@@ -149,7 +149,7 @@
 	
 	.light-content #external-caption:before {
 		background-color:#fff;
-	}
+	} */
 	
 	#external-caption .slide-caption {
 		position:absolute;
