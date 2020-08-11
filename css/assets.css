@@ -1672,7 +1672,7 @@ button.swiper-pagination-bullet {
 	.justified-gallery>.jg-filtered{
 		display:none
 	}
-	.justified-gallery>.spinner{
+	/* .justified-gallery>.spinner{
 		position:absolute;
 		bottom:0;
 		margin-left:-24px;
@@ -1691,4 +1691,4 @@ button.swiper-pagination-bullet {
 		margin:0 4px;
 		background-color:#fff;
 		border-radius:6px
-	}
+	} */
