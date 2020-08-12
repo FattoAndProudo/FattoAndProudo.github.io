@@ -63,6 +63,7 @@ Function Page Load
 				$(obj).text(current);
 			  //obj.innerHTML = current;
 				if (current == end) {
+					$(obj).text('Loading...');
 					clearInterval(timer);
 				}
 			}, stepTime);
