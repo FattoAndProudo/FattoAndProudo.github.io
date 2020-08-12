@@ -1847,25 +1847,25 @@ Primary use:	Showcase Portfolio
 	
 	#main-content {
 		position:relative;
-		/* opacity:1;
+		opacity:1;
 		z-index:10;		
 		-webkit-transition: all 0.4s ease-in-out 0s;
-		transition: all 0.4s ease-in-out 0s; */
+		transition: all 0.4s ease-in-out 0s;
 	}
 	
 	#main-page-content {
 		position: relative;
-		opacity: 0;
+		opacity: 1;
 		max-width:1280px;
 		margin:0 auto;
 		margin-bottom:0;
-		/* transform: translateY(15vh);
-		-webkit-transform: translateY(15vh); */
+		transform: translateY(15vh);
+		-webkit-transform: translateY(15vh);
 	}
 	
-	/* #main-page-content.project-page {
+	#main-page-content.project-page {
 		margin-bottom: calc(48vh - 140px);
-	} */
+	}
 	
 	
 	
