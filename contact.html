@@ -112,7 +112,7 @@
                         <div id="hero-caption" class="">
                             <div class="inner">
                                 <h1 class="hero-title">Get in <span>Touch</span></h1> 
-                                <h2 class="hero-subtitle">For general enquiries {insert sidd's email}</h2>
+                                <h2 class="hero-subtitle">For general enquiries siddharth.gandhi.427@gmaill.com</h2>
                             </div>
                         </div>                                            
                     </div>
@@ -136,7 +136,7 @@
                             	<div class="clapat-icon">
                                     
                                     <h6>Insert more info about freelancing or whatevs</h6>
-                                	<p>Test #1: Added .htaccess</p> 
+                                	<!-- <p>Test #1: Added .htaccess</p>  -->
                                 </div>
                                 
                                 <!-- <div class="clapat-icon">
@@ -148,13 +148,14 @@
                             
                             <div class="one_half last has-animation" data-delay="200">
                                 <!-- Contact Formular -->
-                                <div id="contact-formular">
+
+                                <!-- <div id="contact-formular">
                                 
                                     <div id="message"></div>
                                 
-                                    <form method="post" action="contact.php" name="contactform" id="contactform">                             
+                                    <form method="post" action="https://formspree.io/xvowyddk" name="contactform" id="contactform">                             
                                         <div class="name-box">        
-                                            <input name="name" type="text" id="name" size="30"  onfocus="if(this.value == 'Full Name') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Full Name'; }" value="Full Name" ><label class="input_label"></label>
+                                            <input required name="name" type="text" id="name" size="30"  onfocus="if(this.value == 'Full Name') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Full Name'; }" value="Full Name" ><label class="input_label"></label>
                                         </div>                                                        
                                         <div class="email-box">
                                             <input name="email" type="text" id="email" size="30" onfocus="if(this.value == 'E-mail') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'E-mail'; }" value="E-mail" ><label class="input_label"></label>
@@ -167,9 +168,24 @@
                                         </div>
                                     </form>                        
                                                             
+                                </div> -->
+
+                                <div id="contact-formular">
+                                    <div id="message">
+                                            <form action="https://formspree.io/xvowyddk" method="POST">
+                                                <input type="hidden" name="_subject" value="New submission From Website!" />
+                                            <textarea class="name-box" name="name" placeholder="Full Name" required></textarea>
+                                            <textarea class="email-box" size="30" name="email" placeholder="E-mail" required></textarea>
+                                            <textarea class="message-box" name="message" placeholder="Your message" required></textarea>
+                                            <button class="submit-box send_message clapat-button outline link" type="submit">Submit</button>
+                                        </form>
+                                    </div>
                                 </div>
                                 <!--/Contact Formular -->
                             </div>
+
+                           
+                        
                             
                         </div>
                         

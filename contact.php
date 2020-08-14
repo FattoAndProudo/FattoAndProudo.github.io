@@ -1,5 +1,6 @@
 <?php
 
+
 if(!$_POST) exit;
 
 // Email address verification, do not edit.
@@ -12,8 +13,6 @@ if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 $name     = $_POST['name'];
 $email    = $_POST['email'];
 $comments = $_POST['comments'];
-
-<?= console_log($name); ?>
 
 if(trim($name) == '') {
 	echo '<div class="error_message">Attention! You must enter your name.</div>';
