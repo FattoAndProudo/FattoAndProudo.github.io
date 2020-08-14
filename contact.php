@@ -13,6 +13,8 @@ $name     = $_POST['name'];
 $email    = $_POST['email'];
 $comments = $_POST['comments'];
 
+<?= console_log($name); ?>
+
 if(trim($name) == '') {
 	echo '<div class="error_message">Attention! You must enter your name.</div>';
 	exit();
