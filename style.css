@@ -2069,7 +2069,7 @@ Primary use:	Showcase Portfolio
 	.socials-wrap {
 		position:relative;
 		float: right;
-		color: #000;
+		color: #fff;
 		width: 220px;
 		height: 80px;
 		box-sizing: border-box;
@@ -2204,7 +2204,7 @@ Primary use:	Showcase Portfolio
 	}
 	
 	.socials li a {
-		color: #000;		
+		color: #999;		
 		font-size:12px;
 		font-weight: 600;
 		display: block;
@@ -2222,7 +2222,7 @@ Primary use:	Showcase Portfolio
 	}
 	
 	.socials li a:hover {
-		color: #000;
+		color: #fff;
 		opacity:1;
 	}
 	
