@@ -783,6 +783,9 @@ Function Virtual Scroll
 /*--------------------------------------------------
 Function Sliders
 ---------------------------------------------------*/
+
+	var cc = $("#cc");
+   	var photo = $("[id=photo]");
 	
 	function Sliders() {
 		
@@ -799,7 +802,7 @@ Function Sliders
 		$( ".slider .owl-prev" ).removeClass( "parallax-wrap" );
 		$( ".slider .owl-next" ).removeClass( "parallax-wrap" );
 		
-		$('.carousel').owlCarousel({
+		photo.owlCarousel({
 			loop:true,
 			margin:0,
 			autoWidth: false,
@@ -820,9 +823,46 @@ Function Sliders
 				}
 			}
 		});
+
+		cc.owlCarousel({
+			loop:true,
+			autoHeight: true,
+			items: 1,
+			nav: true,
+			navSpeed: 600
+		});
+
+
+		// $('.carousely').owlCarousel({
+		// 	loop:true,
+		// 	margin:0,
+		// 	autoWidth: true,
+		// 	navSpeed: 600,
+		// 	nav:true,
+		// 	responsive:{
+		// 		0:{
+		// 			items:1
+		// 		},
+		// 		479:{
+		// 			items:2
+		// 		},
+		// 		1024:{
+		// 			items:3
+		// 		},
+		// 		1466:{
+		// 			items:3
+		// 		}
+		// 	}
+		// });
+
+		// $( ".carousely" ).addClass( "carousel");
+
 		
 		$( ".carousel .owl-prev" ).removeClass( "parallax-wrap" );
 		$( ".carousel .owl-next" ).removeClass( "parallax-wrap" );	
+
+		$( ".carousely .owl-prev" ).removeClass( "parallax-wrap" );
+		$( ".carousely .owl-next" ).removeClass( "parallax-wrap" );	
 			
 		$(".owl-prev").mouseenter(function(e) {	
 			TweenMax.to('#ball', 0.1,{transformOrigin: '15px 15px', borderWidth: '1px', scale: 2});
