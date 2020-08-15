@@ -801,8 +801,8 @@ Function Sliders
 		
 		$('.carousel').owlCarousel({
 			loop:true,
-			margin:20,
-			autoHeight:false,
+			margin:0,
+			autoWidth: false,
 			navSpeed: 600,
 			nav:true,
 			responsive:{
