@@ -462,6 +462,10 @@ Primary use:	Showcase Portfolio
 		line-height: 36px;
 		margin-left:-1px;	
 	}
+
+	.light-content h4 {
+		padding-top: 50%;
+	}
 	
 	h5{
 		font-size:18px;
@@ -2823,15 +2827,19 @@ Primary use:	Showcase Portfolio
 	.button-text {
     	margin-left: 0px;
 	}
-	
-	
+
 	
 	
 }
 
-@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
     
 	#rotate-device {
 		display:block;
 	}
+	
+	.light-content h4 {
+		padding: 0%;
+	}
+	  
 }
