@@ -1879,13 +1879,13 @@ Primary use:	Showcase Portfolio
 	
 	footer {
 		position:relative;
-		width:100%;
+		/* width:100%; */
 		height:140px;
 		z-index:900;
 		box-sizing:border-box;
 		text-align:center;
 		bottom:0;
-		left:0;
+		right:0;
 		padding-top: 100px;
 	}
 	
@@ -1899,10 +1899,10 @@ Primary use:	Showcase Portfolio
 		height: 40px;
 		opacity: 0;
 		position: absolute;
-		width: 100%;
+		/* width: 100%; */
 		box-sizing: border-box;
 		bottom: 0;
-		left: 0;
+		right: 0;
 	}
 	
 	#counter-wrap {

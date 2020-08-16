@@ -95,7 +95,7 @@ Function Page Load
 									TweenMax.to($(".centered-slider #image-slider"), 1, {force3D:true, opacity:0.8, x:0, scale:0.6, delay:0.5, ease:Power2.easeOut});						
 									var tlThumbs = new TimelineLite();
 									$(".split-slider .swiper-slide").each(function(index, element) {
-										tlThumbs.to(element, 1, {x:0, opacity:1, delay:0.5,  ease:Power2.easeOut}, index * 0.03)
+										tlThumbs.to(element, 1, {x:0, opacity:1, delay:0.5,  ease:Power2.easeOut,}, index * 0.03)
 									});
 									TweenMax.to($("#external-caption"), 0.6, {force3D:true, opacity:1, delay:1, x:0, ease:Power2.easeOut});
 									TweenMax.to($(".centered-slider .swiper-slide-active"), 1, {force3D:true, scale:1, opacity:1, delay:0.8, ease:Power2.easeOut  });
@@ -533,9 +533,9 @@ Function Portfolio
             }
 
 			var swiperOptions = {
-				slidesPerView: 'auto',
-				direction: "horizontal",
-				loop: true,
+				slidesPerView: 6,
+				direction: "vertical",
+				loop: false,
 				grabCursor: true,
 				resistance : true,
 				resistanceRatio : 0,
