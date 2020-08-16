@@ -784,10 +784,12 @@ Function Virtual Scroll
 Function Sliders
 ---------------------------------------------------*/
 
-	var cc = $("[id=cc]");
-   	var photo = $("[id=photo]");
+	
 	
 	function Sliders() {
+
+		var cc = $("[id=cc]");
+   		var photo = $("[id=photo]");
 		
 		$('.slider').owlCarousel({
 			loop:true,
