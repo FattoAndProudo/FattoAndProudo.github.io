@@ -2,11 +2,14 @@
 $(document).ready(function() {
 	
 	"use strict";
+
+	var cc = $("[id=cc]");
+   	var photo = $("[id=photo]");
 	
 	PageLoad();
 	FirstLoad();
 	HeroSection();
-	Sliders();
+	Sliders(cc,photo);
 	AjaxLoad();
 	Portfolio();
 	setTimeout(function(){
@@ -19,6 +22,8 @@ $(document).ready(function() {
 	AppearIteam();
 	ContactForm();
 	PlayVideo();
+
+	
 	
 });
 
@@ -29,6 +34,9 @@ Function Page Load
 ---------------------------------------------------*/
 
 	function PageLoad() {	
+
+		var cc = $("[id=cc]");
+   		var photo = $("[id=photo]");
 		
 		if ($('#page-content').hasClass("light-content")) {
 			$('.preloader-wrap').addClass('light-content');			
@@ -786,10 +794,9 @@ Function Sliders
 
 	
 	
-	function Sliders() {
+	function Sliders(cc, photo) {
 
-		var cc = $("[id=cc]");
-   		var photo = $("[id=photo]");
+		
 		
 		$('.slider').owlCarousel({
 			loop:true,
