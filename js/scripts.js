@@ -2,14 +2,11 @@
 $(document).ready(function() {
 	
 	"use strict";
-
-	var cc = $("[id=cc]");
-   	var photo = $("[id=photo]");
 	
 	PageLoad();
 	FirstLoad();
 	HeroSection();
-	Sliders(cc,photo);
+	Sliders();
 	AjaxLoad();
 	Portfolio();
 	setTimeout(function(){
@@ -794,9 +791,11 @@ Function Sliders
 
 	
 	
-	function Sliders(cc, photo) {
+	function Sliders() {
 
-		
+		var cc = $("[id=cc]");
+   		var photo = $("[id=photo]");
+
 		
 		$('.slider').owlCarousel({
 			loop:true,
@@ -833,7 +832,7 @@ Function Sliders
 			}
 		});
 
-		cc.owlCarousel({
+		$("[id=cc]").owlCarousel({
 			loop:true,
 			autoHeight: true,
 			items: 1,
