@@ -463,7 +463,7 @@ Primary use:	Showcase Portfolio
 		margin-left:-1px;	
 	}
 
-	.light-content h4 {
+	.cctitle {
 		padding-top: 50%;
 	}
 	
@@ -2838,8 +2838,8 @@ Primary use:	Showcase Portfolio
 		display:block;
 	}
 	
-	.light-content h4 {
-		padding: 0%;
+	.cctitle {
+		padding: 0;
 	}
 	  
 }
