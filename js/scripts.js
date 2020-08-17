@@ -555,6 +555,7 @@ Function Portfolio
 							TweenMax.to($(".swiper-slide-active").next().next(), 0.4, {force3D:true, x:-250, opacity:0, delay:0.1, ease:Power2.easeIn  });
 							TweenMax.to($(".swiper-slide-active").next().next().next(), 0.4, {force3D:true, x:-250, opacity:0, delay:0.15, ease:Power2.easeIn  });
 							TweenMax.to($(".swiper-slide-active").next().next().next().next(), 0.4, {force3D:true, x:-250, opacity:0, delay:0.2, ease:Power2.easeIn  });			
+							TweenMax.to($(".swiper-slide-active").next().next().next().next().next(), 0.4, {force3D:true, x:-250, opacity:0, delay:0.25, ease:Power2.easeIn  });			
 							TweenMax.to($("#image-slider"), 0.7, {left:0, ease:Power2.easeInOut});
 							TweenMax.to($("#image-slider .image-slider-wrapper"), 0.7, {x:0, ease:Power2.easeInOut});		
 							setTimeout( function(){
