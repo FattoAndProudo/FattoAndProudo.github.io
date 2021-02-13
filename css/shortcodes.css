@@ -1135,3 +1135,11 @@
 #vidbuffer{
 	padding: 20px;
 }
+
+#large-title{
+	font-size: 100px;
+	font-weight: bold;
+	color: ivory;
+	padding-bottom: 50px;
+	scroll-padding-top: 50px;
+}
