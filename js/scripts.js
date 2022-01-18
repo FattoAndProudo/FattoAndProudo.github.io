@@ -1,5 +1,5 @@
 
-$(document).ready(function() {
+	$(document).ready(function() {
 	
 	"use strict";
 	
@@ -23,6 +23,9 @@ $(document).ready(function() {
 	
 	
 });
+
+
+
 
 
 
@@ -154,8 +157,8 @@ Function Page Load
 			});
 	  
 		}, time);
-		
-		
+
+
 		
 	}// End Page Load
 		
@@ -166,6 +169,7 @@ Function First Load
 ---------------------------------------------------*/	
 
 	function FirstLoad() {	
+
 		
 		$("html,body").animate({scrollTop: 0}, 1);
 		
@@ -267,7 +271,7 @@ Function First Load
 		});
 		
 		//Load Page From Menu
-		$('.sm-screen .ajax-link').on('click', function() {							
+		$(' .ajax-link').on('click', function() {							
 			$("body").addClass("show-loader");			
 			var tlMenu = new TimelineLite();
 			$(".menu-timeline").each(function(index, element) {
@@ -311,7 +315,6 @@ Function First Load
 				$(this).get(0).play();
 			}); 
 		}	
-		
 		
 		var viewportWidth = $(window).width();
 		if (viewportWidth < 1024) {				
@@ -1284,6 +1287,24 @@ Function Load Via Ajax
 		ContactForm();
 		PlayVideo();		
 	
-	}//End Load Via Ajax				
-	
-		
+	}//End Load Via Ajax
+
+$(function() {
+	$({
+		reloadbox: "#wrapper",
+		loadErrorMessage: "<h2>404</h2> <br> Page you are looking for - Not found", // 404 error text
+		loadErrorBacklinkText: "Back to the last page", // 404 back button  text
+		outDuration: 10,
+		inDuration: 10
+	});
+	readyFunctions();
+	$(document).on({
+		ksctbCallback: function() {
+			readyFunctions();
+		}
+	});
+	document.addEventListener('gesturestart', function (e) {
+		e.preventDefault();
+	});
+});
+
