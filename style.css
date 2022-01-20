@@ -2843,3 +2843,57 @@ Primary use:	Showcase Portfolio
 	}
 	  
 }
+
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  
+  .videodiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* .embed-container div h3 {
+      margin-bottom: 10%;
+  }
+ */
+
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+    
+    #rotate-device {
+        display:block;
+    }
+    
+    .cctitle {
+        padding: 0;
+    }
+      
+}
+
+@media only screen and (max-device-width : 375px) {
+    .embed-container {
+        max-width: 100%;
+		margin-bottom: 10%;
+    }
+
+    .embed-container .div .text-align-center {
+        bottom: 10%;
+    }
+}
+
+/* 
+@media only screen and (min-device-width : 667px) {
+
+} */
+
+
