@@ -198,9 +198,8 @@
 <!--new-->
 
 
-
-				<style>
-/* Responsive flex container */
+<style>
+/* Flex layout */
 .tweet-text-row {
     display: flex;
     flex-wrap: wrap;
@@ -230,10 +229,7 @@
         gap: 20px;
     }
 
-    .tweet-text-row .tweet-col {
-        flex: 1 1 100%;
-    }
-
+    .tweet-text-row .tweet-col,
     .tweet-text-row .text-col {
         flex: 1 1 100%;
         padding: 0 5%;
@@ -284,24 +280,28 @@
 <!-- Twitter script (footer/global, only once) -->
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<!-- Force tweet render when visible -->
+<!-- BULLETPROOF Twitter render -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const tweetWrapper = document.getElementById("tweet-wrapper");
     if (!tweetWrapper) return;
 
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (window.twttr && twttr.widgets) {
-                    twttr.widgets.load(tweetWrapper);
-                }
-                obs.disconnect(); // only run once
+    // Observe size changes / DOM mutations
+    const observer = new MutationObserver(() => {
+        const rect = tweetWrapper.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+            if (window.twttr && twttr.widgets) {
+                twttr.widgets.load(tweetWrapper);
             }
-        });
-    }, { threshold: 0.1 });
+            observer.disconnect(); // only run once
+        }
+    });
 
-    observer.observe(tweetWrapper);
+    observer.observe(tweetWrapper, {
+        attributes: true,
+        childList: true,
+        subtree: true
+    });
 });
 </script>
 
@@ -478,6 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </html>
+
 
 
 
