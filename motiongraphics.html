@@ -392,49 +392,35 @@
     <script src="js/scripts.js"></script>
 
 <!--new-->
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-			<script>
-window.addEventListener("load", function () {
-    setTimeout(function () {
-        if (window.twttr && twttr.widgets) {
-            twttr.widgets.load(
-                document.getElementById("tweet-wrapper")
-            );
-        }
-    }, 600);
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tweetWrapper = document.getElementById("tweet-wrapper");
+    if (!tweetWrapper) return;
+
+    // IntersectionObserver options
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Ensure Twitter script exists
+                if (window.twttr && twttr.widgets) {
+                    twttr.widgets.load(tweetWrapper);
+                }
+                obs.disconnect(); // only run once
+            }
+        });
+    }, { threshold: 0.1 }); // 10% visible triggers
+
+    observer.observe(tweetWrapper);
 });
 </script>
 
-
-<script>
-(function () {
-    const tweetWrapper = document.getElementById("tweet-wrapper");
-
-    if (!tweetWrapper) return;
-
-    const observer = new MutationObserver(() => {
-        const rect = tweetWrapper.getBoundingClientRect();
-
-        // Check that the element is visible and has layout
-        if (rect.width > 0 && rect.height > 0) {
-            if (window.twttr && twttr.widgets) {
-                twttr.widgets.load(tweetWrapper);
-                observer.disconnect(); // run once
-            }
-        }
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true
-    });
-})();
-</script>
-
+	
 </body>
 
 
 </html>
+
 
