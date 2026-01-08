@@ -357,34 +357,30 @@ window.onload = function() {
 
 <!--New-->
 
-	<script>
+<script>
 (function() {
-    function loadTwitter() {
-        const tweet = document.querySelector('.twitter-tweet');
-        if (!tweet) return;
+    // Wait for preloader to finish
+    function checkPageReady() {
+        const body = document.querySelector('body');
+        const tweet = document.querySelector('#black-mirror-section .twitter-tweet');
 
-        // Check if the tweet has non-zero size (container is visible)
-        const rect = tweet.getBoundingClientRect();
-        if (rect.width > 0 && rect.height > 0) {
-            // Load Twitter widget
+        // Only continue if body is visible and tweet exists
+        if (body && body.classList.contains('hidden') === false && tweet) {
+            // Load Twitter widgets
             if (window.twttr && twttr.widgets) {
-                twttr.widgets.load();
+                twttr.widgets.load(tweet);
             } else {
-                // Retry after 200ms if widgets.js hasn't loaded yet
-                setTimeout(loadTwitter, 200);
+                // Retry if widgets.js hasn't loaded
+                setTimeout(checkPageReady, 200);
             }
         } else {
-            // Retry after 200ms until container has size
-            setTimeout(loadTwitter, 200);
+            // Retry every 200ms until page is ready
+            setTimeout(checkPageReady, 200);
         }
     }
 
-    // Wait until DOM is ready
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        loadTwitter();
-    } else {
-        document.addEventListener("DOMContentLoaded", loadTwitter);
-    }
+    // Start checking
+    checkPageReady();
 })();
 </script>
 	
@@ -392,6 +388,7 @@ window.onload = function() {
 
 
 </html>
+
 
 
 
