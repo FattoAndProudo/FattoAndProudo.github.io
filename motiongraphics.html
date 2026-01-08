@@ -343,14 +343,15 @@
 <!--new-->
 
 <script>
-(function() {
+window.onload = function() {
     if (!sessionStorage.getItem('pageReloaded')) {
         sessionStorage.setItem('pageReloaded', 'true');
+        // Optional: add small delay to let everything settle
         setTimeout(function() {
             window.location.reload();
-        }, 1500); // 1.5 seconds
+        }, 500); // half-second delay
     }
-})();
+};
 </script>
 
 	
@@ -358,6 +359,7 @@
 
 
 </html>
+
 
 
 
