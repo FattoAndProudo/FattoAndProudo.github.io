@@ -149,6 +149,7 @@
 
                         
                      	<!-- Row = VIRGIN JAMIE -->
+						<div id="carousel-section">
                         <div class="vc_row"  style="padding: 20px 0px 40px 0px;">
                             
                             <div class="container" >
@@ -184,6 +185,7 @@
                             </div>
                             
                         </div>
+						</div>
                         <!--/Row = VIRGIN JAMIE -->
 
 
@@ -463,8 +465,57 @@
     <script src="js/plugins.js"></script>
     <script src="js/scripts.js"></script>
 
+<script>
+(function() {
+    function initCarouselSafely() {
+        const body = document.body;
+        const carousel = document.querySelector('#carousel-section');
 
+        // Wait until body is visible and carousel exists
+        if (!carousel || body.classList.contains('hidden')) {
+            return setTimeout(initCarouselSafely, 200);
+        }
+
+        // Wait until images are loaded
+        const images = carousel.querySelectorAll('img');
+        let loaded = 0;
+
+        if (images.length === 0) {
+            startCarousel();
+            return;
+        }
+
+        images.forEach(img => {
+            if (img.complete) {
+                loaded++;
+            } else {
+                img.onload = () => {
+                    loaded++;
+                    if (loaded === images.length) startCarousel();
+                };
+                img.onerror = () => {
+                    loaded++;
+                    if (loaded === images.length) startCarousel();
+                };
+            }
+        });
+
+        if (loaded === images.length) startCarousel();
+    }
+
+    function startCarousel() {
+        // 🔴 THIS is where your carousel init goes
+        // Example:
+        // $('.carousel').slick();
+        // or new Swiper(...)
+        console.log('Carousel initialized safely');
+    }
+
+    initCarouselSafely();
+})();
+</script>
 
 </body>
+
 
 </html>
