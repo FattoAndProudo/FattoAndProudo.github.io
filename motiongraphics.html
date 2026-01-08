@@ -199,55 +199,111 @@
 
 
 
-					<div class="text-align-center" data-delay="10">
+				<style>
+/* Responsive flex container */
+.tweet-text-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
 
-    <div style="
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 40px;
-        width: 100%;
-    ">
+/* Tweet column */
+.tweet-text-row .tweet-col {
+    flex: 0 0 550px;
+    text-align: center;
+}
 
-        <!-- TWEET COLUMN -->
-        <div id="tweet-wrapper" style="flex: 0 0 550px; text-align: center;">
-            <blockquote class="twitter-tweet" data-dnt="true">
-                <p lang="en" dir="ltr">
-                    hip hip hooray
-                    <a href="https://t.co/0vzFvNlOYB">pic.twitter.com/0vzFvNlOYB</a>
-                </p>
-                &mdash; Black Mirror (@blackmirror)
-                <a href="https://twitter.com/blackmirror/status/1768337657745023010">
-                    March 14, 2024
-                </a>
-            </blockquote>
-        </div>
+/* Text column */
+.tweet-text-row .text-col {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 10%;
+}
 
-        <!-- TEXT COLUMN -->
-        <div style="flex: 1; padding: 0 10%;">
-            <h5>
-                The announcement of Season 7 of Black Mirror. A collaboration
-                with Netflix and Charlie Brooker to create a visual that both
-                embodied the mood and aesthetic of the series while sneaking in
-                small Easter eggs throughout.
-            </h5>
+/* Mobile: stack vertically */
+@media screen and (max-width: 768px) {
+    .tweet-text-row {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-            <div style="padding-top: 3%;">
-                <h5>Featured Articles:</h5>
-                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-                    <a class="link" target="_blank" href="https://www.eonline.com/news/1397330/black-mirror-season-7-details-revealed">E-Online</a>
-                    <a class="link" target="_blank" href="https://www.indiewire.com/news/breaking-news/black-mirror-season-7-uss-callister-sequel-1234964760/">IndieWire</a>
-                    <a class="link" target="_blank" href="https://bloody-disgusting.com/tv/3804150/black-mirror-season-7-coming-in-2025-will-feature-a-sequel-to-uss-callister-episode/">Bloody-Disgusting</a>
-                    <a class="link" target="_blank" href="https://screenrant.com/black-mirror-season-7-release-year-episode-count-confirmed">ScreenRant</a>
-                    <a class="link" target="_blank" href="https://collider.com/black-mirror-season-7-teaser-uss-callister-2/">Collider</a>
-                    <a class="link" target="_blank" href="https://www.ladbible.com/entertainment/netflix/black-mirror-season-7-netflix-761311-20240314">LADbible</a>
-                </div>
+    .tweet-text-row .tweet-col {
+        flex: 1 1 100%;
+    }
+
+    .tweet-text-row .text-col {
+        flex: 1 1 100%;
+        padding: 0 5%;
+    }
+}
+</style>
+
+<div class="tweet-text-row">
+
+    <!-- Tweet Column -->
+    <div id="tweet-wrapper" class="tweet-col">
+        <blockquote class="twitter-tweet" data-dnt="true">
+            <p lang="en" dir="ltr">
+                hip hip hooray
+                <a href="https://t.co/0vzFvNlOYB">pic.twitter.com/0vzFvNlOYB</a>
+            </p>
+            &mdash; Black Mirror (@blackmirror)
+            <a href="https://twitter.com/blackmirror/status/1768337657745023010">
+                March 14, 2024
+            </a>
+        </blockquote>
+    </div>
+
+    <!-- Text Column -->
+    <div class="text-col">
+        <h5>
+            The announcement of Season 7 of Black Mirror. A collaboration
+            with Netflix and Charlie Brooker to create a visual that both
+            embodied the mood and aesthetic of the series while sneaking in
+            small Easter eggs throughout.
+        </h5>
+
+        <div style="padding-top: 3%;">
+            <h5>Featured Articles:</h5>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                <a class="link" target="_blank" href="https://www.eonline.com/news/1397330/black-mirror-season-7-details-revealed">E-Online</a>
+                <a class="link" target="_blank" href="https://www.indiewire.com/news/breaking-news/black-mirror-season-7-uss-callister-sequel-1234964760/">IndieWire</a>
+                <a class="link" target="_blank" href="https://bloody-disgusting.com/tv/3804150/black-mirror-season-7-coming-in-2025-will-feature-a-sequel-to-uss-callister-episode/">Bloody-Disgusting</a>
+                <a class="link" target="_blank" href="https://screenrant.com/black-mirror-season-7-release-year-episode-count-confirmed">ScreenRant</a>
+                <a class="link" target="_blank" href="https://collider.com/black-mirror-season-7-teaser-uss-callister-2/">Collider</a>
+                <a class="link" target="_blank" href="https://www.ladbible.com/entertainment/netflix/black-mirror-season-7-netflix-761311-20240314">LADbible</a>
             </div>
         </div>
-
     </div>
+
 </div>
 
+<!-- Twitter script (footer/global, only once) -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!-- Force tweet render when visible -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tweetWrapper = document.getElementById("tweet-wrapper");
+    if (!tweetWrapper) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (window.twttr && twttr.widgets) {
+                    twttr.widgets.load(tweetWrapper);
+                }
+                obs.disconnect(); // only run once
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(tweetWrapper);
+});
+</script>
 
 
 
@@ -422,5 +478,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </html>
+
 
 
