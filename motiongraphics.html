@@ -344,10 +344,11 @@
 
 <script>
 (function() {
-    // Only refresh once
     if (!sessionStorage.getItem('pageReloaded')) {
-        sessionStorage.setItem('pageReloaded', 'true'); // mark as reloaded
-        window.location.reload(); // reload page
+        sessionStorage.setItem('pageReloaded', 'true');
+        setTimeout(function() {
+            window.location.reload();
+        }, 1500); // 1.5 seconds
     }
 })();
 </script>
@@ -357,6 +358,7 @@
 
 
 </html>
+
 
 
 
