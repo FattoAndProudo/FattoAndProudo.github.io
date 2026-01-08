@@ -407,7 +407,34 @@ window.addEventListener("load", function () {
 </script>
 
 
+<script>
+(function () {
+    const tweetWrapper = document.getElementById("tweet-wrapper");
+
+    if (!tweetWrapper) return;
+
+    const observer = new MutationObserver(() => {
+        const rect = tweetWrapper.getBoundingClientRect();
+
+        // Check that the element is visible and has layout
+        if (rect.width > 0 && rect.height > 0) {
+            if (window.twttr && twttr.widgets) {
+                twttr.widgets.load(tweetWrapper);
+                observer.disconnect(); // run once
+            }
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true
+    });
+})();
+</script>
+
 </body>
 
 
 </html>
+
