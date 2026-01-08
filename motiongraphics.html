@@ -354,11 +354,45 @@ window.onload = function() {
 };
 </script>
 
+
+<!--New-->
+
+	<script>
+(function() {
+    function loadTwitter() {
+        const tweet = document.querySelector('.twitter-tweet');
+        if (!tweet) return;
+
+        // Check if the tweet has non-zero size (container is visible)
+        const rect = tweet.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+            // Load Twitter widget
+            if (window.twttr && twttr.widgets) {
+                twttr.widgets.load();
+            } else {
+                // Retry after 200ms if widgets.js hasn't loaded yet
+                setTimeout(loadTwitter, 200);
+            }
+        } else {
+            // Retry after 200ms until container has size
+            setTimeout(loadTwitter, 200);
+        }
+    }
+
+    // Wait until DOM is ready
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        loadTwitter();
+    } else {
+        document.addEventListener("DOMContentLoaded", loadTwitter);
+    }
+})();
+</script>
 	
 </body>
 
 
 </html>
+
 
 
 
